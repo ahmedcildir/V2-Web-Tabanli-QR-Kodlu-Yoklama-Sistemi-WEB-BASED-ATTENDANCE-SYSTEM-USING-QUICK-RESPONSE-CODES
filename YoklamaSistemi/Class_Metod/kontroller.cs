@@ -26,5 +26,21 @@ namespace YoklamaSistemi.Class_Metod
 
         }
 
+        //Yönetici eklemede bir kullanıcıyı birden fazla kayıt olmasını engellem. 
+        public bool TcYonetici(string tc)
+        {
+            var TekTC = from t in ctx.tblAdmins where (t.TC == tc) select t;
+            if (TekTC.Any())
+            {
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
     }
 }

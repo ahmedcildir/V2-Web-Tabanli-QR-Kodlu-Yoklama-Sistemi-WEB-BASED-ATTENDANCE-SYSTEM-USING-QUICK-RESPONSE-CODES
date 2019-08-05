@@ -39,7 +39,7 @@
                                     <td>
                                         <a href="islem.aspx?id=<%# Eval("id") %>&islem=onay" class="btn btn-success btn-xs" role="button">Onayla</a>
                                         <a href="islem.aspx?id=<%# Eval("id") %>&islem=red" class="btn btn-danger btn-xs" role="button">Reddet</a>
-                                        <a href="detayGoster.aspx" class="btn btn-primary btn-xs" role="button">Göster</a>
+                                        <a href="detayGoster.aspx?id=<%# Eval("id") %>" class="btn btn-primary btn-xs" role="button">Göster</a>
                                     </td>
                                 </tr>
                             </ItemTemplate>
@@ -48,6 +48,11 @@
                     </tbody>
                 </table>
             </div>
+            <div class="text-center">
+                <asp:Label ID="lblmesaj" runat="server" Font-Bold="true" ForeColor="Red"></asp:Label>
+                <br />
+            </div>
+            
         </div>
     </div>
 </asp:Content>

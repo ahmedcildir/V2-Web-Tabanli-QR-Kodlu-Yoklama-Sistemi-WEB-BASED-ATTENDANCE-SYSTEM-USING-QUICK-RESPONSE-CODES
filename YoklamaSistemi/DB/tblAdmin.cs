@@ -23,12 +23,12 @@ namespace YoklamaSistemi.DB
         [StringLength(11)]
         public string TC { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime date_of_birth { get; set; }
-
         [Required]
-        [StringLength(100)]
-        public string Place_of_birth { get; set; }
+        [StringLength(10)]
+        public string date_of_birth { get; set; }
+
+        [StringLength(50)]
+        public string kategori { get; set; }
 
         [Required]
         [StringLength(11)]
@@ -45,5 +45,8 @@ namespace YoklamaSistemi.DB
         public string foto { get; set; }
 
         public string foto2 { get; set; }
+
+        [StringLength(2)]
+        public string onay { get; set; }
     }
 }

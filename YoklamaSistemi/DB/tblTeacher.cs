@@ -44,6 +44,8 @@ namespace YoklamaSistemi.DB
 
         public string foto { get; set; }
 
+        public string foto2 { get; set; }
+
         [StringLength(2)]
         public string onay { get; set; }
     }

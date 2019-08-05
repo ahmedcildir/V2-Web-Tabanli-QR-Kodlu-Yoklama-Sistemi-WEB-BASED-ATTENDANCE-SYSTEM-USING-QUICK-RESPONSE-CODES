@@ -20,6 +20,11 @@ namespace YoklamaSistemi.form
                 veri.onay(id);
                 Response.Redirect("KullaniciOnay.aspx");
             }
+            else if (islem.Equals("sil"))
+            {
+                veri.pasif(id);
+                Response.Redirect("kullanicileriGoster.aspx");
+            }
             else
             {
                 veri.Red(id);

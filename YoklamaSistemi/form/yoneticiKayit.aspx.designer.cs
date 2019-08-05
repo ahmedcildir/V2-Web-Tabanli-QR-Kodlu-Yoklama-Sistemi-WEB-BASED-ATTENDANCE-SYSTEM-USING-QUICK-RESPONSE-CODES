@@ -13,6 +13,15 @@ namespace YoklamaSistemi.form {
     public partial class yoneticiKayit {
         
         /// <summary>
+        /// lblmesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmesaj;
+        
+        /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
@@ -103,13 +112,13 @@ namespace YoklamaSistemi.form {
         protected global::System.Web.UI.WebControls.TextBox txtDogumTarihi;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// dropgorev control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList dropgorev;
         
         /// <summary>
         /// RequiredFieldValidator9 control.

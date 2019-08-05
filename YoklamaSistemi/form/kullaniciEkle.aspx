@@ -15,6 +15,9 @@
     </div>
     <div class="box box-primary">
         <div class="row ">
+            <div class="text-center">
+                <asp:Label ID="lblmesaj" runat="server" ForeColor="Red" Font-Bold="true"></asp:Label>
+            </div>
             <br />
             <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <table class="table table-borderless">
@@ -113,7 +116,7 @@
                                 <asp:Button ID="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" Text="Kaydet" OnClick="btnKayit_Click" />
                                 <br />
                                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" HeaderText="Hata" ForeColor="Red" />
-                                <asp:Label ID="lblmesaj" runat="server" ForeColor="Red"></asp:Label>
+                                
                             </td>
                         </tr>
                     </tbody>

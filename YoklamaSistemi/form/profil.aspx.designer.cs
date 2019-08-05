@@ -13,6 +13,15 @@ namespace YoklamaSistemi.form {
     public partial class profil {
         
         /// <summary>
+        /// repdetay control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repdetay;
+        
+        /// <summary>
         /// resimyukle control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace YoklamaSistemi.form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload filfotosec;
+        
+        /// <summary>
+        /// lblmesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmesaj;
         
         /// <summary>
         /// btnfotoKayit control.
@@ -139,13 +157,13 @@ namespace YoklamaSistemi.form {
         protected global::System.Web.UI.WebControls.TextBox txtDogumTarihi;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// dropduzen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList dropduzen;
         
         /// <summary>
         /// RequiredFieldValidator9 control.
@@ -211,12 +229,12 @@ namespace YoklamaSistemi.form {
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
-        /// Button1 control.
+        /// btnguncelle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnguncelle;
     }
 }

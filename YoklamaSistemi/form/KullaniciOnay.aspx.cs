@@ -15,12 +15,16 @@ namespace YoklamaSistemi.form
         {
             onaybekleyen();
         }
-        
+
         public void onaybekleyen()
         {
             var getOnayBekleyen = ctx.tblTeachers.Where(x => x.onay == "0").ToList();
             repOnay.DataSource = getOnayBekleyen;
             repOnay.DataBind();
+            if (getOnayBekleyen.Count() == 0)
+            {
+                lblmesaj.Text = "Onay Bekleyen Kullanıcı Bulunmamaktadır.<br/>";
+            }
 
         }
     }

@@ -13,6 +13,15 @@ namespace YoklamaSistemi.form {
     public partial class kullaniciEkle {
         
         /// <summary>
+        /// lblmesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmesaj;
+        
+        /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
@@ -236,14 +245,5 @@ namespace YoklamaSistemi.form {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
-        
-        /// <summary>
-        /// lblmesaj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmesaj;
     }
 }

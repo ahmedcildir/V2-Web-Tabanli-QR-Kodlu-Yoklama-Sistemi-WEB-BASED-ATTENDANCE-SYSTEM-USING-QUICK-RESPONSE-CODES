@@ -29,17 +29,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Çıldır</td>
-                            <td>Akedemisyen</td>
-                            <td>
-                                <a href="detayGoster.aspx" class="btn btn-primary btn-xs" role="button">Göster</a>
-                                <a href="profil.aspx" class="btn btn-warning btn-xs" role="button">Düzenle</a>
-                                <a href="#" class="btn btn-danger btn-xs" role="button">Sil</a>
-                            </td>
-                        </tr>
+                        <asp:Repeater ID="repyonetici" runat="server">
+                            <ItemTemplate>
+                                <tr>
+                                    <th scope="row"><%# Eval("id") %></th>
+                                    <td><%# Eval("name") %></td>
+                                    <td><%# Eval("surname") %></td>
+                                    <td><%# Eval("kategori") %></td>
+                                    <td>
+                                        <a href="detayGoster.aspx?id=<%# Eval("id") %>&kate=yonetici" class="btn btn-primary btn-xs" role="button">Göster</a>
+                                        <a href="profil.aspx?id=<%# Eval("id") %>&kate=yonetici" class="btn btn-warning btn-xs" role="button">Düzenle</a>
+                                        <a href="#" class="btn btn-danger btn-xs" role="button">Sil</a>
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </tbody>
                 </table>
             </div>

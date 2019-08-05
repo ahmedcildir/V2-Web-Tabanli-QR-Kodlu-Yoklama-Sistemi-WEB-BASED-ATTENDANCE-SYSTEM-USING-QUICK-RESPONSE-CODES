@@ -10,24 +10,24 @@
 namespace YoklamaSistemi.form {
     
     
-    public partial class kullanicileriGoster {
+    public partial class sil {
         
         /// <summary>
-        /// replistele control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater replistele;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblmesaj control.
+        /// hdntxtbxTaksit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmesaj;
+        protected global::System.Web.UI.WebControls.HiddenField hdntxtbxTaksit;
     }
 }

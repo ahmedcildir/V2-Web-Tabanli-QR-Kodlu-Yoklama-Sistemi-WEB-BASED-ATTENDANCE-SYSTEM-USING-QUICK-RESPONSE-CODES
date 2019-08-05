@@ -15,6 +15,10 @@
     </div>
     <div class="box box-success">
         <div class="row ">
+            <div class="text-center">
+                <br />
+                <asp:Label ID="lblmesaj" runat="server" Font-Bold="true"></asp:Label>
+            </div>
             <br />
             <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <table class="table table-borderless">
@@ -58,7 +62,7 @@
                         <tr>
                             <td>Görev :</td>
                             <td>
-                                <asp:DropDownList ID="DropDownList1" class="form-control select2" runat="server">
+                                <asp:DropDownList ID="dropgorev" class="form-control select2" runat="server">
                                     <asp:ListItem>Görev Seçiniz..</asp:ListItem>
                                     <asp:ListItem>X1</asp:ListItem>
                                     <asp:ListItem>X2</asp:ListItem>
@@ -110,10 +114,10 @@
                         <tr>
                             <td></td>
                             <td>
-                                <asp:Button ID="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" Text="Kaydet" />
+                                <asp:Button ID="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" Text="Kaydet" OnClick="btnKayit_Click" />
                                 <br />
                                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" HeaderText="Hata" ForeColor="Red" />
-
+                                
                             </td>
                         </tr>
                     </tbody>

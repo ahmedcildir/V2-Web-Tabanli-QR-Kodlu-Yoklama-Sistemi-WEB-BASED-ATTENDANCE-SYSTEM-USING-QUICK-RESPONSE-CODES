@@ -38,7 +38,11 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<tblAdmin>()
-                .Property(e => e.Place_of_birth)
+                .Property(e => e.date_of_birth)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<tblAdmin>()
+                .Property(e => e.kategori)
                 .IsUnicode(false);
 
             modelBuilder.Entity<tblAdmin>()
@@ -59,6 +63,10 @@
 
             modelBuilder.Entity<tblAdmin>()
                 .Property(e => e.foto2)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<tblAdmin>()
+                .Property(e => e.onay)
                 .IsUnicode(false);
 
             modelBuilder.Entity<tblAkademisyenDersKaydı>()
@@ -146,7 +154,7 @@
                 .IsUnicode(false);
 
             modelBuilder.Entity<tblStudent>()
-                .Property(e => e.place_of_birth)
+                .Property(e => e.date_of_birth)
                 .IsUnicode(false);
 
             modelBuilder.Entity<tblStudent>()

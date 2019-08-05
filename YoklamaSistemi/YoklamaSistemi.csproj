@@ -85,6 +85,7 @@
     <Content Include="form\kullanicileriGoster.aspx" />
     <Content Include="form\KullaniciOnay.aspx" />
     <Content Include="form\login.aspx" />
+    <Content Include="form\sil.aspx" />
     <Content Include="Libraries\theme-assets\css\app-lite.css" />
     <Content Include="Libraries\theme-assets\css\app-lite.min.css" />
     <Content Include="Libraries\theme-assets\css\bootstrap-extended.css" />
@@ -8521,6 +8522,13 @@
     </Compile>
     <Compile Include="form\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form\sil.aspx.cs">
+      <DependentUpon>sil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form\sil.aspx.designer.cs">
+      <DependentUpon>sil.aspx</DependentUpon>
     </Compile>
     <Compile Include="teacher\dersDuzenleme.aspx.cs">
       <DependentUpon>dersDuzenleme.aspx</DependentUpon>
