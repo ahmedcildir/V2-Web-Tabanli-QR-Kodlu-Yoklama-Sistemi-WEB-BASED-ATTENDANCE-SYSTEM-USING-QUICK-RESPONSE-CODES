@@ -15,6 +15,7 @@ namespace YoklamaSistemi.form
         islemler x = new islemler();
         veritabani vt = new veritabani();
         YoklamaSisteiDBContext ctx = new YoklamaSisteiDBContext();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             revdogum.MaximumValue = x.Tarih();
@@ -41,7 +42,13 @@ namespace YoklamaSistemi.form
             }
             else
             {
-
+                int idisi = Convert.ToInt32(Session["id"].ToString());
+                repdetay.DataSource = vt.YoneticiDetay(idisi);
+                repdetay.DataBind();
+                if (!Page.IsPostBack)
+                {
+                    getYoneticibilgiler(idisi);
+                }
             }
            
         }
@@ -227,7 +234,8 @@ namespace YoklamaSistemi.form
             }
             else
             {
-
+                int idisi = Convert.ToInt32(Session["id"].ToString());
+                yoneticiguncelle(idisi);
             }
             
             
@@ -247,7 +255,8 @@ namespace YoklamaSistemi.form
             }
             else
             {
-
+                int idisi = Convert.ToInt32(Session["id"].ToString());
+                yoneticifotoguncelle(idisi);
             }
             
         }
@@ -266,7 +275,8 @@ namespace YoklamaSistemi.form
             }
             else
             {
-
+                int idisi = Convert.ToInt32(Session["id"].ToString());
+                yoneticiArkaPilanfotoguncelle(idisi);
             }
             
         }

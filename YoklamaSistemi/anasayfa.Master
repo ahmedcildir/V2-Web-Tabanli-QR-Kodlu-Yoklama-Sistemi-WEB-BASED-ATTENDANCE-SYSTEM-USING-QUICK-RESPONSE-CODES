@@ -178,7 +178,7 @@
                                 <li><a href="yoneticiKayit.aspx"><i class="fa fa-circle-o"></i>Yönetici Ekle</a></li>
                                 <li><a href="yoneticiGoster.aspx"><i class="fa fa-circle-o"></i>Yöneticileri Göster</a></li>
                             </ul>
-                        </li>
+                      <%--  </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-share"></i><span>Genel İşlemler</span>
@@ -213,7 +213,7 @@
                                 </li>
                                 <li><a href="#"><i class="fa fa-circle-o"></i>X3</a></li>
                             </ul>
-                        </li>
+                        </li>--%>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-table"></i><span>Diğer İşlemler</span>
@@ -222,7 +222,7 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="profil.aspx"><i class="fa fa-circle-o"></i>Profil</a></li>
+                                <li><a href="profil.aspx?&kate=diger"><i class="fa fa-circle-o"></i>Profil</a></li>
                                 <li><a href="sifreguncelle.aspx"><i class="fa fa-circle-o"></i>Şifre Güncelle</a></li>
                             </ul>
                         </li>

@@ -17,14 +17,21 @@
 
     function ShowConfirm() {
 <%--        var myHidden = document.getElementById('<%= hdntxtbxTaksit.ClientID %>').nodeValue;--%>
-        var userInput = '<%= Session["id1"].ToString() %>'
-        var confirmation = confirm("Emin misiniz?");
+        var id = '<%= Session["id1"].ToString() %>';
+        var kategori = '<%= Session["kate"].ToString() %>';
+        var confirmation = confirm("Bu kullanıcıyı Silmek İstediğinizden Emin misiniz?");
         if (confirmation) {
-            window.location.href = "islem.aspx?id=" +userInput+"&islem=sil";
+            window.location.href = "islem.aspx?id=" + id + "&islem=sil&kate=" + kategori;
             //alert("Kayıt Silinmiştir.");
         }
         else {
-            window.location.href="kullanicileriGoster.aspx";
+            if (kategori=="kullanici") {
+                window.location.href="kullanicileriGoster.aspx";
+            }
+            else {
+                    window.location.href="yoneticiGoster.aspx";
+            }
+            
         }
         return confirmation;
     };

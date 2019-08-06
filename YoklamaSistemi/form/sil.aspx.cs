@@ -11,8 +11,10 @@ namespace YoklamaSistemi.form
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string kategori = Request.QueryString["kate"];
             string id = Request.QueryString["id"];
             Session["id1"] = id;
+            Session["kate"] = kategori;
 
         }
     }

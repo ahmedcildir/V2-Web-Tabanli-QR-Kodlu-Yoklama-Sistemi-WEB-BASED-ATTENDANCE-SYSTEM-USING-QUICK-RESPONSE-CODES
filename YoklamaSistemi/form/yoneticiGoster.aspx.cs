@@ -14,7 +14,7 @@ namespace YoklamaSistemi.form
         YoklamaSisteiDBContext ctx = new YoklamaSisteiDBContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            var liste = ctx.tblAdmins.ToList();
+            var liste = ctx.tblAdmins.Where(x=>x.onay.Equals("1")).ToList();
             repyonetici.DataSource = liste;
             repyonetici.DataBind();
         }

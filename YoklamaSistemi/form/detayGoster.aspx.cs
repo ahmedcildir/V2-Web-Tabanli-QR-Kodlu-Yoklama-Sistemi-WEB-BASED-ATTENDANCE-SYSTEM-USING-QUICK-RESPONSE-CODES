@@ -14,8 +14,23 @@ namespace YoklamaSistemi.form
         protected void Page_Load(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["id"]);
-            repdetay.DataSource = vt.KullaniciDetay(id);
-            repdetay.DataBind();
+            string kategori = Request.QueryString["kate"];
+            if (kategori.Equals("kullanici"))
+            {
+                repdetay.DataSource = vt.KullaniciDetay(id);
+                repdetay.DataBind();
+            }
+            else if (kategori.Equals("yonetici"))
+            {
+                repdetay.DataSource = vt.YoneticiDetay(id);
+                repdetay.DataBind();
+            }
+            else
+            {
+
+            }
+
+
         }
     }
 }

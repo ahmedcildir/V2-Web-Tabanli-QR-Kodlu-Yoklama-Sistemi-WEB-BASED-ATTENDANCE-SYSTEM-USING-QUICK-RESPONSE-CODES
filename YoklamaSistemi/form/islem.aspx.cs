@@ -14,6 +14,7 @@ namespace YoklamaSistemi.form
         protected void Page_Load(object sender, EventArgs e)
         {
             int id =Convert.ToInt32(Request.QueryString["id"]);
+            string kategori = Request.QueryString["kate"];
             string islem = Request.QueryString["islem"];
             if (islem.Equals("onay"))
             {
@@ -22,8 +23,23 @@ namespace YoklamaSistemi.form
             }
             else if (islem.Equals("sil"))
             {
-                veri.pasif(id);
-                Response.Redirect("kullanicileriGoster.aspx");
+                
+                if (kategori.Equals("kullanici"))
+                {
+                    veri.kullanicipasif(id);
+                    Response.Redirect("kullanicileriGoster.aspx");
+                }
+                else if (kategori.Equals("yonetici"))
+                {
+                    veri.yoneticipasif(id);
+                    Response.Redirect("yoneticiGoster.aspx");
+
+                }
+                else
+                {
+
+                }
+               
             }
             else
             {

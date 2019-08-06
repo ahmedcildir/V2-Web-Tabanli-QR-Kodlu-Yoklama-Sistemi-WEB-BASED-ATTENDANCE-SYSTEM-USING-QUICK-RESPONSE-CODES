@@ -97,14 +97,23 @@ namespace YoklamaSistemi.Class_Metod
             }
             ctx.SaveChanges();
         }
-
         //kullanıcı pasif
-        public void pasif(int id)
+        public void kullanicipasif(int id)
         {
             var setonay = from p in ctx.tblTeachers where (p.id == id) select p;
             foreach (var p in setonay)
             {
                 p.onay = "2";
+            }
+            ctx.SaveChanges();
+        }
+        //Yönetici pasif
+        public void yoneticipasif(int id)
+        {
+            var setonay = from p in ctx.tblAdmins where (p.id == id) select p;
+            foreach (var p in setonay)
+            {
+                p.onay = "0";
             }
             ctx.SaveChanges();
         }

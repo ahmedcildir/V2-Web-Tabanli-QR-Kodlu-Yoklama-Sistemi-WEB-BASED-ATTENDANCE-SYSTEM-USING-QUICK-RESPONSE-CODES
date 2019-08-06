@@ -13,22 +13,23 @@ namespace YoklamaSistemi
         YoklamaSisteiDBContext ctx = new YoklamaSisteiDBContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["id"] != null && Session["Login_onay"].ToString() == "OK")
-            //{
-            //    int id = int.Parse(Session["id"].ToString());
-            //    var qUser = ctx.tblAdmins.Where(x => x.id == id).FirstOrDefault();
-            //    lblad1.Text = " " + qUser.name + "  " + qUser.surname;
-            //    lblAd2.Text = " " + qUser.name + "  " + qUser.surname;
-            //    lblad3.Text = " " + qUser.name + "  " + qUser.surname;
-            //    //imFoto.ImageUrl = qUser.Fotograf;
+
+            if (Session["id"] != null && Session["Login_onay"].ToString() == "OK")
+            {
+                int id = int.Parse(Session["id"].ToString());
+                var qUser = ctx.tblAdmins.Where(x => x.id == id).FirstOrDefault();
+                lblad1.Text = " " + qUser.name + "  " + qUser.surname;
+                lblAd2.Text = " " + qUser.name + "  " + qUser.surname;
+                lblad3.Text = " " + qUser.name + "  " + qUser.surname;
+                //imFoto.ImageUrl = qUser.Fotograf;
 
 
 
-            //}
-            //else
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }

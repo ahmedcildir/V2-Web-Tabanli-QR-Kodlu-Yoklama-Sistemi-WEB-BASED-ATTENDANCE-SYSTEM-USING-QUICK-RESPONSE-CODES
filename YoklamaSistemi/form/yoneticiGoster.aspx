@@ -39,7 +39,7 @@
                                     <td>
                                         <a href="detayGoster.aspx?id=<%# Eval("id") %>&kate=yonetici" class="btn btn-primary btn-xs" role="button">Göster</a>
                                         <a href="profil.aspx?id=<%# Eval("id") %>&kate=yonetici" class="btn btn-warning btn-xs" role="button">Düzenle</a>
-                                        <a href="#" class="btn btn-danger btn-xs" role="button">Sil</a>
+                                        <a href="sil.aspx?id=<%# Eval("id") %>&kate=yonetici" class="btn btn-danger btn-xs" role="button">Sil</a>
                                     </td>
                                 </tr>
                             </ItemTemplate>

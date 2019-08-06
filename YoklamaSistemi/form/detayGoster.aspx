@@ -11,12 +11,13 @@
                         <div class="widget-user-header bg-black" style="background: url('../Libraries/dist/img/photo1.png') center center;">
                         </div>
                         <div class="widget-user-image">
-                            <img class="img-circle" src="../Libraries/dist/img/<%# Eval("foto") %>" alt="User Avatar">
+                            <img class="img-circle" src="<%# Eval("foto") %>" alt="User Avatar">
                         </div>
                         <div class="box-footer">
                             <div class="row">
                                 <div class="col-sm-4 border-right">
                                     <div class="description-block">
+                                        <h5 class="description-header">Ad Soyad</h5>
                                         <span class="description-header"><%# Eval("name") %>&nbsp;<%# Eval("surname") %></span>
                                     </div>
                                     <!-- /.description-block -->
@@ -30,6 +31,7 @@
                                 <!-- /.col -->
                                 <div class="col-sm-4">
                                     <div class="description-block">
+                                        <h5 class="description-header">Görev</h5>
                                         <span class="description-header"><%# Eval("kategori") %></span>
                                     </div>
                                     <!-- /.description-block -->
