@@ -45,12 +45,19 @@ namespace YoklamaSistemi.form
                 }
                 else
                 {
-                    int idisi = Convert.ToInt32(Session["id"].ToString());
-                    repdetay.DataSource = vt.YoneticiDetay(idisi);
-                    repdetay.DataBind();
-                    if (!Page.IsPostBack)
+                    if (Session["id"]!=null)
                     {
-                        getYoneticibilgiler(idisi);
+                        int idisi = Convert.ToInt32(Session["id"].ToString());
+                        repdetay.DataSource = vt.YoneticiDetay(idisi);
+                        repdetay.DataBind();
+                        if (!Page.IsPostBack)
+                        {
+                            getYoneticibilgiler(idisi);
+                        }
+                    }
+                    else
+                    {
+                        Response.Redirect("login.aspx");
                     }
                 }
             }

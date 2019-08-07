@@ -26,6 +26,9 @@ namespace YoklamaSistemi.form
                     string parola = txtYeniSifrr.Text;
                     veri.yoneticiParolaGuncelleme(parola, id);
                     lblUyari.Text = "Parolanız başarılı bir şekilde güncellenmiştir..";
+                    txtEskiSifre.Text = "";
+                    txtYeniSifrr.Text = "";
+                    txtYeniSifrrTekrar.Text = "";
                 }
                 else
                 {

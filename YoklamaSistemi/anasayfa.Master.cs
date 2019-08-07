@@ -18,9 +18,9 @@ namespace YoklamaSistemi
             {
                 int id = int.Parse(Session["id"].ToString());
                 var qUser = ctx.tblAdmins.Where(x => x.id == id).FirstOrDefault();
-                lblad1.Text = " " + qUser.name + "  " + qUser.surname;
-                lblAd2.Text = " " + qUser.name + "  " + qUser.surname;
-                lblad3.Text = " " + qUser.name + "  " + qUser.surname;
+                //lblad1.Text = " " + qUser.name + "  " + qUser.surname;
+                //lblAd2.Text = " " + qUser.name + "  " + qUser.surname;
+                //lblad3.Text = " " + qUser.name + "  " + qUser.surname;
 
                 var getid = from i in ctx.tblAdmins
                             where (i.id == id)

@@ -60,125 +60,125 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <form id="form1" runat="server">
-        <div class="wrapper">
+        <asp:Repeater ID="repid" runat="server">
+            <ItemTemplate>
+                <div class="wrapper">
+                    <header class="main-header">
+                        <!-- Logo -->
+                        <a href="anasayfa.aspx" class="logo">
+                            <!-- mini logo for sidebar mini 50x50 pixels -->
+                            <span class="logo-mini"><b>Y</b>.S</span>
+                            <!-- logo for regular state and mobile devices -->
+                            <span class="logo-lg"><b>Yoklama</b>&nbsp;SİSTEMİ</span>
+                        </a>
+                        <!-- Header Navbar: style can be found in header.less -->
+                        <nav class="navbar navbar-static-top">
+                            <!-- Sidebar toggle button-->
+                            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                                <span class="sr-only">Toggle navigation</span>
+                            </a>
 
-            <header class="main-header">
-                <!-- Logo -->
-                <a href="anasayfa.aspx" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b>Y</b>.S</span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><b>Yoklama</b>&nbsp;SİSTEMİ</span>
-                </a>
-                <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-static-top">
-                    <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
-                    </a>
+                            <div class="navbar-custom-menu">
+                                <ul class="nav navbar-nav">
+                                    <!-- Messages: style can be found in dropdown.less-->
 
-                    <div class="navbar-custom-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- Messages: style can be found in dropdown.less-->
+                                    <!-- Notifications: style can be found in dropdown.less -->
 
-                            <!-- Notifications: style can be found in dropdown.less -->
+                                    <!-- Tasks: style can be found in dropdown.less -->
 
-                            <!-- Tasks: style can be found in dropdown.less -->
+                                    <!-- User Account: style can be found in dropdown.less -->
+                                    <li class="dropdown user user-menu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <img src="<%# Eval("foto") %>" class="user-image" alt="User Image">
+                                            <span class="hidden-xs">
+                                               <%# Eval("name") %>&nbsp;<%# Eval("surname") %>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <!-- User image -->
+                                            <li class="user-header">
+                                                <img src="<%# Eval("foto") %>" class="img-circle" alt="User Image">
 
-                            <!-- User Account: style can be found in dropdown.less -->
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="../Libraries/dist/img/avatar5.png" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">
-                                        <asp:Label ID="lblad1" runat="server" Text="Ad Soyad"></asp:Label></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- User image -->
-                                    <li class="user-header">
-                                        <img src="../Libraries/dist/img/avatar5.png" class="img-circle" alt="User Image">
-
-                                        <p>
-                                            <asp:Label ID="lblAd2" runat="server" Text="Ad Soyad"></asp:Label>
-                                            - Web Developer
+                                                <p>
+                                                   <%# Eval("kategori") %> - <%# Eval("name") %>&nbsp;<%# Eval("surname") %>
                  
-                                        <small>Member since Nov. 2012</small>
-                                        </p>
-                                    </li>
-                                    <!-- Menu Body -->
+                                        <small><%# Eval("email") %></small>
+                                                </p>
+                                            </li>
+                                            <!-- Menu Body -->
 
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="profil.aspx" class="btn btn-default btn-flat">Profil</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="login.aspx" class="btn btn-default btn-flat">Oturumu Kpat</a>
-                                        </div>
+                                            <!-- Menu Footer-->
+                                            <li class="user-footer">
+                                                <div class="pull-left">
+                                                    <a href="profil.aspx?id=<%# Eval("id") %>&kate=diger" class="btn btn-default btn-flat">Profil</a>
+                                                </div>
+                                                <div class="pull-right">
+                                                    <a href="login.aspx" class="btn btn-default btn-flat">Oturumu Kpat</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- Control Sidebar Toggle Button -->
+                                    <li>
+                                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                                     </li>
                                 </ul>
-                            </li>
-                            <!-- Control Sidebar Toggle Button -->
-                            <li>
-                                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
-                <section class="sidebar">
-                    <!-- Sidebar user panel -->
-                    <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="../Libraries/dist/img/avatar5.png" class="img-circle" alt="User Image">
-                        </div>
-                        <div class="pull-left info">
-                            <br />
-                            <p>
-                                <asp:Label ID="lblad3" runat="server" Text="Ad Soyad"></asp:Label>
-                            </p>
-                            <%--                        <a href="#"><i class="fa fa-circle text-success"></i>Online</a>--%>
-                        </div>
-                    </div>
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
-                    <ul class="sidebar-menu" data-widget="tree">
-                        <hr />
-                        <li class="header">MENÜ</li>
-                        <li>
-                            <a href="anasayfa.aspx">
-                                <i class="fa  fa-home"></i><span>Ana Sayfa</span>
+                            </div>
+                        </nav>
+                    </header>
+                    <!-- Left side column. contains the logo and sidebar -->
+                    <aside class="main-sidebar">
+                        <!-- sidebar: style can be found in sidebar.less -->
+                        <section class="sidebar">
+                            <!-- Sidebar user panel -->
+                            <div class="user-panel">
+                                <div class="pull-left image">
+                                    <img src="<%# Eval("foto") %>" class="img-circle" alt="User Image">
+                                </div>
+                                <div class="pull-left info">
+                                    <br />
+                                    <p>
+                                        <%# Eval("name") %>&nbsp;<%# Eval("surname") %>
+                                    </p>
+                                    <%--                        <a href="#"><i class="fa fa-circle text-success"></i>Online</a>--%>
+                                </div>
+                            </div>
+                            <!-- sidebar menu: : style can be found in sidebar.less -->
+                            <ul class="sidebar-menu" data-widget="tree">
+                                <hr />
+                                <li class="header">MENÜ</li>
+                                <li>
+                                    <a href="anasayfa.aspx">
+                                        <i class="fa  fa-home"></i><span>Ana Sayfa</span>
 
-                            </a>
-                        </li>
+                                    </a>
+                                </li>
 
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-laptop"></i>
-                                <span>Kullanıcı İşlemleri</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="kullaniciEkle.aspx"><i class="fa fa-circle-o"></i>Kullanıcı Ekle</a></li>
-                                <li><a href="KullaniciOnay.aspx"><i class="fa fa-circle-o"></i>Onay Bekleyen Kullanıcılar</a></li>
-                                <li><a href="kullanicileriGoster.aspx"><i class="fa fa-circle-o"></i>Onaylanmış Kullanıcılar</a></li>
-                            </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-edit"></i><span>Yönetici İşlemleri</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="yoneticiKayit.aspx"><i class="fa fa-circle-o"></i>Yönetici Ekle</a></li>
-                                <li><a href="yoneticiGoster.aspx"><i class="fa fa-circle-o"></i>Yöneticileri Göster</a></li>
-                            </ul>
-                            <%--  </li>
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="fa fa-laptop"></i>
+                                        <span>Kullanıcı İşlemleri</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="kullaniciEkle.aspx"><i class="fa fa-circle-o"></i>Kullanıcı Ekle</a></li>
+                                        <li><a href="KullaniciOnay.aspx"><i class="fa fa-circle-o"></i>Onay Bekleyen Kullanıcılar</a></li>
+                                        <li><a href="kullanicileriGoster.aspx"><i class="fa fa-circle-o"></i>Onaylanmış Kullanıcılar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="fa fa-edit"></i><span>Yönetici İşlemleri</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="yoneticiKayit.aspx"><i class="fa fa-circle-o"></i>Yönetici Ekle</a></li>
+                                        <li><a href="yoneticiGoster.aspx"><i class="fa fa-circle-o"></i>Yöneticileri Göster</a></li>
+                                    </ul>
+                                    <%--  </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-share"></i><span>Genel İşlemler</span>
@@ -214,72 +214,71 @@
                                 <li><a href="#"><i class="fa fa-circle-o"></i>X3</a></li>
                             </ul>
                         </li>--%>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-table"></i><span>Diğer İşlemler</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <asp:Repeater ID="repid" runat="server">
-                                    <ItemTemplate>
+                                <li class="treeview">
+                                    <a href="#">
+                                        <i class="fa fa-table"></i><span>Diğer İşlemler</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+
                                         <li><a href="profil.aspx?id=<%# Eval("id") %>&kate=diger"><i class="fa fa-circle-o"></i>Profil</a></li>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                                <li><a href="sifreguncelle.aspx"><i class="fa fa-circle-o"></i>Şifre Güncelle</a></li>
+
+                                        <li><a href="sifreguncelle.aspx"><i class="fa fa-circle-o"></i>Şifre Güncelle</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#"><i class="fa fa-book"></i><span>Hakkımızda</span></a></li>
+                                <li class="header"></li>
+                                <li><a href="#"><i class="fa fa-circle-o text-success"></i><span>Yardım</span></a></li>
+                                <%--<li><a href="#"><i class="fa fa-circle-o text-red"></i><span>Warning</span></a></li>--%>
+                                <%--<li><a href="#"><i class="fa fa-circle-o text-aqua"></i><span>Information</span></a></li>--%>
                             </ul>
-                        </li>
-
-                        <li><a href="#"><i class="fa fa-book"></i><span>Hakkımızda</span></a></li>
-                        <li class="header"></li>
-                        <li><a href="#"><i class="fa fa-circle-o text-success"></i><span>Yardım</span></a></li>
-                        <%--<li><a href="#"><i class="fa fa-circle-o text-red"></i><span>Warning</span></a></li>--%>
-                        <%--<li><a href="#"><i class="fa fa-circle-o text-aqua"></i><span>Information</span></a></li>--%>
-                    </ul>
-                </section>
-                <!-- /.sidebar -->
-            </aside>
-
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Main content -->
-                <section class="content">
-                    <%-- Ana Sayfa --%>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-                </section>
-                <!-- /.content -->
-            </div>
-            <!-- /.content-wrapper -->
-            <footer class="main-footer">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> 0.0.1
-   
-                </div>
-                <strong>Copyright &copy; 2019 <a href="http://ahmedcildir.blogspot.com/">Ahmed ÇILDIR</a>.</strong> All rights reserved.
-            </footer>
-
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark" style="display: none;">
-                <!-- Create the tabs -->
-                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-                    <%--<li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>--%>
-                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears">&nbsp;Ayarlar</i></a></li>
-                </ul>
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <!-- Home tab content -->
-                    <div class="tab-pane" id="control-sidebar-home-tab">
-                    </div>
-                </div>
-            </aside>
-            <!-- /.control-sidebar -->
-            <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-            <div class="control-sidebar-bg"></div>
+                        </section>
+                        <!-- /.sidebar -->
+                    </aside>
+            </ItemTemplate>
+        </asp:Repeater>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <%-- Ana Sayfa --%>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+            <!-- /.content -->
         </div>
-        <!-- jQuery 3 -->
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 0.0.1
+   
+            </div>
+            <strong>Copyright &copy; 2019 <a href="http://ahmedcildir.blogspot.com/">Ahmed ÇILDIR</a>.</strong> All rights reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark" style="display: none;">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <%--<li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>--%>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears">&nbsp;Ayarlar</i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane" id="control-sidebar-home-tab">
+                </div>
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+        </div>
+                <!-- jQuery 3 -->
         <script src="../Libraries/bower_components/jquery/dist/jquery.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
         <script src="../Libraries/bower_components/jquery-ui/jquery-ui.min.js"></script>
