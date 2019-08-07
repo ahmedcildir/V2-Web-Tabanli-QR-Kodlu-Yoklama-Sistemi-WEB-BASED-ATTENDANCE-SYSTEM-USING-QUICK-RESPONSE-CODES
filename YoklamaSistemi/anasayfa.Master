@@ -178,7 +178,7 @@
                                 <li><a href="yoneticiKayit.aspx"><i class="fa fa-circle-o"></i>Yönetici Ekle</a></li>
                                 <li><a href="yoneticiGoster.aspx"><i class="fa fa-circle-o"></i>Yöneticileri Göster</a></li>
                             </ul>
-                      <%--  </li>
+                            <%--  </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-share"></i><span>Genel İşlemler</span>
@@ -222,7 +222,11 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="profil.aspx?&kate=diger"><i class="fa fa-circle-o"></i>Profil</a></li>
+                                <asp:Repeater ID="repid" runat="server">
+                                    <ItemTemplate>
+                                        <li><a href="profil.aspx?id=<%# Eval("id") %>&kate=diger"><i class="fa fa-circle-o"></i>Profil</a></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                                 <li><a href="sifreguncelle.aspx"><i class="fa fa-circle-o"></i>Şifre Güncelle</a></li>
                             </ul>
                         </li>
@@ -286,7 +290,7 @@
 
         <!-- Select2 -->
         <script src="../Libraries/bower_components/select2/dist/js/select2.full.min.js"></script>
-       
+
 
         <!-- Bootstrap 3.3.7 -->
         <script src="../Libraries/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -21,6 +21,12 @@ namespace YoklamaSistemi
                 lblad1.Text = " " + qUser.name + "  " + qUser.surname;
                 lblAd2.Text = " " + qUser.name + "  " + qUser.surname;
                 lblad3.Text = " " + qUser.name + "  " + qUser.surname;
+
+                var getid = from i in ctx.tblAdmins
+                            where (i.id == id)
+                            select i;
+                repid.DataSource = getid.ToList();
+                repid.DataBind();
                 //imFoto.ImageUrl = qUser.Fotograf;
 
 

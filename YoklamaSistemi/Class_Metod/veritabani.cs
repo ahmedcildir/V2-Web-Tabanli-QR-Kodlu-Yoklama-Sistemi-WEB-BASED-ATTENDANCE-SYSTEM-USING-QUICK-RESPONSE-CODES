@@ -26,7 +26,7 @@ namespace YoklamaSistemi.Class_Metod
                 email = Eposta,
                 password = parola,
                 onay = onay,
-                foto= "avatar5.png"
+                foto = "avatar5.png"
             };
             ctx.tblTeachers.Add(ekle);
             ctx.SaveChanges();
@@ -34,10 +34,10 @@ namespace YoklamaSistemi.Class_Metod
         //Kullanıcıları listeleme
         public object kullaniciListele()
         {
-            var liste =ctx.tblTeachers.Where(x=>x.onay =="1").ToList();
-            
+            var liste = ctx.tblTeachers.Where(x => x.onay == "1").ToList();
+
             return liste;
-        } 
+        }
 
         //Kullanıcı detayını göster
         public object KullaniciDetay(int id)
@@ -69,9 +69,9 @@ namespace YoklamaSistemi.Class_Metod
                 phone = telefon,
                 email = Eposta,
                 password = parola,
-                foto= "avatar5.png",
-                foto2= "photo1.png",
-                onay="1"
+                foto = "avatar5.png",
+                foto2 = "photo1.png",
+                onay = "1"
             };
             ctx.tblAdmins.Add(ekle);
             ctx.SaveChanges();
@@ -90,8 +90,8 @@ namespace YoklamaSistemi.Class_Metod
         //kullanıcı Redetme
         public void Red(int id)
         {
-            var setonay = from p in ctx.tblTeachers where (p.id == id) select p;
-            foreach (var p in setonay)
+            var setRed = from p in ctx.tblTeachers where (p.id == id) select p;
+            foreach (var p in setRed)
             {
                 p.onay = "2";
             }
@@ -115,6 +115,31 @@ namespace YoklamaSistemi.Class_Metod
             {
                 p.onay = "0";
             }
+            ctx.SaveChanges();
+        }
+
+        //eski parolayı kontrol et
+        public bool parolakontrol(string parola, int id)
+        {
+            var getparola = from p in ctx.tblAdmins
+                            where (p.id ==
+ id && p.password == parola)
+                            select p;
+            if (getparola.Any())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //yönetici parolasını güncelleme
+        public void yoneticiParolaGuncelleme(string parola,int id)
+        {
+            var Sifre = ctx.tblAdmins.First(x => x.id == id);
+            Sifre.password = parola;
             ctx.SaveChanges();
         }
     }

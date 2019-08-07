@@ -15,40 +15,48 @@ namespace YoklamaSistemi.form
         islemler x = new islemler();
         veritabani vt = new veritabani();
         YoklamaSisteiDBContext ctx = new YoklamaSisteiDBContext();
-
+        kontroller k = new kontroller();
         protected void Page_Load(object sender, EventArgs e)
         {
             revdogum.MaximumValue = x.Tarih();
-            int id = Convert.ToInt32(Request.QueryString["id"]);
-            string kategori = Request.QueryString["kate"];
-            if (kategori.Equals("kullanici"))
+            string girdi = Request.QueryString["id"];
+            if (k.SayiMi(girdi) == true)
             {
-                repdetay.DataSource = vt.KullaniciDetay(id);
-                repdetay.DataBind();
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                string kategori = Request.QueryString["kate"];
+                if (kategori.Equals("kullanici"))
+                {
+                    repdetay.DataSource = vt.KullaniciDetay(id);
+                    repdetay.DataBind();
 
-                if (!Page.IsPostBack)
-                {
-                    getbilgiler(id);
+                    if (!Page.IsPostBack)
+                    {
+                        getbilgiler(id);
+                    }
                 }
-            }
-            else if (kategori.Equals("yonetici"))
-            {
-                repdetay.DataSource = vt.YoneticiDetay(id);
-                repdetay.DataBind();
-                if (!Page.IsPostBack)
+                else if (kategori.Equals("yonetici"))
                 {
-                    getYoneticibilgiler(id);
+                    repdetay.DataSource = vt.YoneticiDetay(id);
+                    repdetay.DataBind();
+                    if (!Page.IsPostBack)
+                    {
+                        getYoneticibilgiler(id);
+                    }
+                }
+                else
+                {
+                    int idisi = Convert.ToInt32(Session["id"].ToString());
+                    repdetay.DataSource = vt.YoneticiDetay(idisi);
+                    repdetay.DataBind();
+                    if (!Page.IsPostBack)
+                    {
+                        getYoneticibilgiler(idisi);
+                    }
                 }
             }
             else
             {
-                int idisi = Convert.ToInt32(Session["id"].ToString());
-                repdetay.DataSource = vt.YoneticiDetay(idisi);
-                repdetay.DataBind();
-                if (!Page.IsPostBack)
-                {
-                    getYoneticibilgiler(idisi);
-                }
+
             }
            
         }
@@ -223,62 +231,83 @@ namespace YoklamaSistemi.form
         protected void btnguncelle_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["id"]);
-            string kategori = Request.QueryString["kate"];
-            if (kategori.Equals("kullanici"))
+            string girdi = Request.QueryString["id"];
+            if (k.SayiMi(girdi) == true)
             {
-                guncelle(id);
-            }
-            else if (kategori.Equals("yonetici"))
-            {
-                yoneticiguncelle(id);
+                string kategori = Request.QueryString["kate"];
+                if (kategori.Equals("kullanici"))
+                {
+                    guncelle(id);
+                }
+                else if (kategori.Equals("yonetici"))
+                {
+                    yoneticiguncelle(id);
+                }
+                else
+                {
+                    int idisi = Convert.ToInt32(Session["id"].ToString());
+                    yoneticiguncelle(idisi);
+                }
             }
             else
             {
-                int idisi = Convert.ToInt32(Session["id"].ToString());
-                yoneticiguncelle(idisi);
+                    
             }
-            
             
         }
 
         protected void btnfotoKayit_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["id"]);
-            string kategori = Request.QueryString["kate"];
-            if (kategori.Equals("kullanici"))
+            string girdi = Request.QueryString["id"];
+            if (k.SayiMi(girdi) == true)
             {
-                fotoguncelle(id);
-            }
-            else if (kategori.Equals("yonetici"))
-            {
-                yoneticifotoguncelle(id);
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                string kategori = Request.QueryString["kate"];
+                if (kategori.Equals("kullanici"))
+                {
+                    fotoguncelle(id);
+                }
+                else if (kategori.Equals("yonetici"))
+                {
+                    yoneticifotoguncelle(id);
+                }
+                else
+                {
+                    int idisi = Convert.ToInt32(Session["id"].ToString());
+                    yoneticifotoguncelle(idisi);
+                }
             }
             else
             {
-                int idisi = Convert.ToInt32(Session["id"].ToString());
-                yoneticifotoguncelle(idisi);
+
             }
-            
         }
 
         protected void btnArkafotokayıt_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Request.QueryString["id"]);
-            string kategori = Request.QueryString["kate"];
-            if (kategori.Equals("kullanici"))
+            string girdi = Request.QueryString["id"];
+            if (k.SayiMi(girdi) == true)
             {
-                ArkaPilanfotoguncelle(id);
-            }
-            else if (kategori.Equals("yonetici"))
-            {
-                yoneticiArkaPilanfotoguncelle(id);
+                int id = Convert.ToInt32(Request.QueryString["id"]);
+                string kategori = Request.QueryString["kate"];
+                if (kategori.Equals("kullanici"))
+                {
+                    ArkaPilanfotoguncelle(id);
+                }
+                else if (kategori.Equals("yonetici"))
+                {
+                    yoneticiArkaPilanfotoguncelle(id);
+                }
+                else
+                {
+                    int idisi = Convert.ToInt32(Session["id"].ToString());
+                    yoneticiArkaPilanfotoguncelle(idisi);
+                }
             }
             else
             {
-                int idisi = Convert.ToInt32(Session["id"].ToString());
-                yoneticiArkaPilanfotoguncelle(idisi);
+
             }
-            
         }
     }
 }

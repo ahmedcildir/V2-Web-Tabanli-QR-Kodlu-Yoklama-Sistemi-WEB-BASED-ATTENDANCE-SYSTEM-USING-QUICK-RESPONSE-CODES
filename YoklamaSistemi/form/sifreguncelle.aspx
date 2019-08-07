@@ -24,7 +24,7 @@
                 <br />
                 <asp:TextBox ID="txtYeniSifrrTekrar" class="form-control mr-sm-4" type="password" runat="server" placeholder="Yeni Parola Tekrar..."></asp:TextBox>
                 <br />
-                <asp:Button ID="btnYukle" runat="server" class="btn btn-block btn-primary btn-xs" Text="Kaydet" />
+                <asp:Button ID="btnYukle" runat="server" class="btn btn-block btn-primary btn-xs" Text="Kaydet" OnClick="btnYukle_Click" />
                 <asp:Label ID="lblUyari" runat="server" ForeColor="Red"></asp:Label>
                 <br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="(*Eski Şifre Kısmı Boş Geçilemez)" ControlToValidate="txtEskiSifre" ForeColor="Red"></asp:RequiredFieldValidator>

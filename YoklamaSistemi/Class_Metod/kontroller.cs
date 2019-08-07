@@ -41,6 +41,14 @@ namespace YoklamaSistemi.Class_Metod
             }
 
         }
-
+        //get kontrolü
+        public bool SayiMi(string text)
+        {
+            foreach (char chr in text)
+            {
+                if (!Char.IsNumber(chr)) return false;
+            }
+            return true;
+        }
     }
 }
