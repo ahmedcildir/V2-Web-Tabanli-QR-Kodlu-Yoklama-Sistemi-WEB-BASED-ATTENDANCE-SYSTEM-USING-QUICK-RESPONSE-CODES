@@ -21,7 +21,7 @@
                     <tbody>
                         <tr>
                             <td class="col col-lg-2 col-md-2 col-sm-2">Ders Kodu :
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtDesKod" ErrorMessage="Ders Kodu Boş Geçilemez." ForeColor="Red">*</asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtDesKod" ErrorMessage="Ders Kodu Boş Geçilemez." ForeColor="Red">*</asp:RequiredFieldValidator>
                             </td>
                             <td class="col col-lg-8 col-md-8 col-sm-2">
                                 <asp:TextBox ID="txtDesKod" class="form-control" placeholder="Ders Kodu.." runat="server"></asp:TextBox>
@@ -48,7 +48,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <textarea id="txtAciklama" class="form-control" rows="4" placeholder="Açıklama ..."></textarea>
+                                    <textarea class="form-control" id="comment" rows="5" placeholder="Açıklama ..."></textarea>
                                 </div>
                             </td>
                         </tr>
@@ -56,10 +56,13 @@
                         <tr>
                             <td></td>
                             <td>
-                                <asp:Button ID="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" Text="Kaydet" />
+                                <asp:Button ID="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" Text="Kaydet" OnClick="btnKayit_Click" OnClientClick="SetHiddenField()" />
                                 <br />
                                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" HeaderText="Hata" ForeColor="Red" />
-
+                                <br />
+                                <div class="text-center">
+                                    <asp:Label ID="lblmesaj" runat="server" Font-Bold="true"></asp:Label>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -67,4 +70,11 @@
             </div>
         </div>
     </div>
+    <asp:HiddenField ID="HiddenField" runat="server"></asp:HiddenField>
+    <script type="text/javascript">
+        function SetHiddenField() {
+            var x = document.getElementById("comment").value;
+            document.getElementById('<%=HiddenField.ClientID%>').value = x;
+        }
+    </script>
 </asp:Content>

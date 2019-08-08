@@ -19,11 +19,9 @@ namespace YoklamaSistemi.DB
         [StringLength(50)]
         public string class_name { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string pozisyon { get; set; }
 
-        [Required]
         [StringLength(250)]
         public string aciklama { get; set; }
     }

@@ -17,6 +17,9 @@
     <div class="box box-primary">
         <div class="row ">
             <br />
+            <div class="text-center">
+                <asp:Label ID="lblmesaj" runat="server" ForeColor="Red" Font-Bold="true"></asp:Label>
+            </div>
             <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <table class="table table-borderless">
                     <tbody>
@@ -67,7 +70,7 @@
                         <tr>
                             <td>Pozisyon :</td>
                             <td>
-                                <asp:DropDownList ID="DropDownList1" class="form-control select2" runat="server">
+                                <asp:DropDownList ID="droppozisyo" class="form-control select2" runat="server">
                                     <asp:ListItem>Pozisyon Seçiniz..</asp:ListItem>
                                     <asp:ListItem>X1</asp:ListItem>
                                     <asp:ListItem>X2</asp:ListItem>
@@ -119,7 +122,7 @@
                         <tr>
                             <td></td>
                             <td>
-                                <asp:Button ID="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" Text="Kaydet" />
+                                <asp:Button ID="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" Text="Kaydet" OnClick="btnKayit_Click" />
                                 <br />
                                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" HeaderText="Hata" ForeColor="Red" />
 

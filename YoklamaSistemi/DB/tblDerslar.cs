@@ -11,6 +11,8 @@ namespace YoklamaSistemi.DB
     {
         public int id { get; set; }
 
+        public int? teacher_id { get; set; }
+
         [StringLength(50)]
         public string dersKod { get; set; }
 

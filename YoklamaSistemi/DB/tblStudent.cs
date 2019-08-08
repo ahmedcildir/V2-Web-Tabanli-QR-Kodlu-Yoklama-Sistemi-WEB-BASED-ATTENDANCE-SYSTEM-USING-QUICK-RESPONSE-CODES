@@ -42,8 +42,6 @@ namespace YoklamaSistemi.DB
         [StringLength(50)]
         public string password { get; set; }
 
-        public int tblAlinanimza_id { get; set; }
-
         [Required]
         [StringLength(50)]
         public string Pozisyon { get; set; }
@@ -51,5 +49,8 @@ namespace YoklamaSistemi.DB
         public string foto1 { get; set; }
 
         public string foto { get; set; }
+
+        [StringLength(2)]
+        public string onay { get; set; }
     }
 }

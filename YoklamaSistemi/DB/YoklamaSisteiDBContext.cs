@@ -177,6 +177,10 @@
                 .Property(e => e.Pozisyon)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<tblStudent>()
+                .Property(e => e.onay)
+                .IsUnicode(false);
+
             modelBuilder.Entity<tblTeacher>()
                 .Property(e => e.name)
                 .IsUnicode(false);

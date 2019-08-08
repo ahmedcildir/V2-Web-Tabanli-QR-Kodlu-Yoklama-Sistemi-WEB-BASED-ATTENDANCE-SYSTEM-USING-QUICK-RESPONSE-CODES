@@ -13,6 +13,15 @@ namespace YoklamaSistemi.teacher {
     public partial class ogrKayit {
         
         /// <summary>
+        /// lblmesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblmesaj;
+        
+        /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
@@ -121,13 +130,13 @@ namespace YoklamaSistemi.teacher {
         protected global::System.Web.UI.WebControls.TextBox txtDogumTarihi;
         
         /// <summary>
-        /// DropDownList1 control.
+        /// droppozisyo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList droppozisyo;
         
         /// <summary>
         /// RequiredFieldValidator9 control.

@@ -5,7 +5,6 @@
         <div class="col-md-12 col-sm-6 col-xs-12">
             <div class="info-box">
                 <span class="info-box-icon bg-aqua"><i class="fa fa-plus-square"></i></span>
-
                 <div class="info-box-content">
                     <span class="info-box-number">SINIF OLUŞTURMA</span>
                     <span class="info-box-text">Formu</span>
@@ -21,40 +20,30 @@
                     <tbody>
                         <tr>
                             <td class="col col-lg-2 col-md-2 col-sm-2">Sınıf Adı :
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtAd" ErrorMessage="Ad Kısmı Boş Geçilemez." ForeColor="Red">*</asp:RequiredFieldValidator>
+                            <asp:requiredfieldvalidator id="RequiredFieldValidator4" runat="server" controltovalidate="txtAd" errormessage="Ad Kısmı Boş Geçilemez." forecolor="Red">*</asp:requiredfieldvalidator>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtAd" class="form-control" placeholder="Sınıf Ad.." runat="server"></asp:TextBox>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>Pozisyon :
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="dropPozisyon" ErrorMessage="Pozisyon Kısmı Boş Geçilemez." ForeColor="Red">*</asp:RequiredFieldValidator>
-
-                            </td>
-                            <td>
-                                <asp:DropDownList ID="dropPozisyon" class="form-control select2" runat="server">
-                                    <asp:ListItem>Pozisyon Seçiniz..</asp:ListItem>
-                                    <asp:ListItem>X1</asp:ListItem>
-                                    <asp:ListItem>X2</asp:ListItem>
-                                </asp:DropDownList>
+                                <asp:textbox id="txtAd" class="form-control" placeholder="Sınıf Ad.." runat="server"></asp:textbox>
                             </td>
                         </tr>
                         <tr>
                             <td>Açıklama : </td>
                             <td>
                                 <div class="form-group">
-                                    <textarea id="txtAciklama" class="form-control" rows="4" placeholder="Açıklama ..."></textarea>
+                                    <textarea class="form-control" id="comment" placeholder="Açıklama.." rows="4"></textarea>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" HeaderText="Hata" ForeColor="Red" />
+                                <asp:validationsummary id="ValidationSummary1" runat="server" displaymode="List" headertext="Hata" forecolor="Red" />
                             </td>
                             <td>
-                                <asp:Button ID="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" Text="Sınıf Oluştur" />
+                                <asp:button id="btnKayit" class="btn btn-outline-info btn-block btn-success btn-sm" runat="server" text="Sınıf Oluştur" onclick="btnKayit_Click1" onclientclick="SetHiddenField()" />
+                                <br />
+                                <div class="text-center">
+                                    <asp:label id="lbluyari" runat="server" ForeColor="red" Font-Bold="true"></asp:label>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -62,4 +51,11 @@
             </div>
         </div>
     </div>
+    <asp:hiddenfield id="HiddenField" runat="server"></asp:hiddenfield>
+    <script type="text/javascript">
+        function SetHiddenField() {
+            var x = document.getElementById("comment").value;
+            document.getElementById('<%=HiddenField.ClientID%>').value = x;
+        }
+    </script>
 </asp:Content>

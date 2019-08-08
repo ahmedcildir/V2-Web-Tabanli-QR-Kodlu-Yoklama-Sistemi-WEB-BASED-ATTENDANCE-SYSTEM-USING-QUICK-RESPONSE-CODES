@@ -26,7 +26,8 @@ namespace YoklamaSistemi.Class_Metod
                 email = Eposta,
                 password = parola,
                 onay = onay,
-                foto = "avatar5.png"
+                foto = "../Libraries/dist/img/avatar5.png",
+                foto2 ="../Libraries/dist/img/photo1.png"
             };
             ctx.tblTeachers.Add(ekle);
             ctx.SaveChanges();
@@ -69,8 +70,8 @@ namespace YoklamaSistemi.Class_Metod
                 phone = telefon,
                 email = Eposta,
                 password = parola,
-                foto = "avatar5.png",
-                foto2 = "photo1.png",
+                foto = "../Libraries/dist/img/avatar5.png",
+                foto2 = "../Libraries/dist/img/photo1.png",
                 onay = "1"
             };
             ctx.tblAdmins.Add(ekle);
@@ -122,8 +123,7 @@ namespace YoklamaSistemi.Class_Metod
         public bool parolakontrol(string parola, int id)
         {
             var getparola = from p in ctx.tblAdmins
-                            where (p.id ==
- id && p.password == parola)
+                            where (p.id == id && p.password == parola)
                             select p;
             if (getparola.Any())
             {
@@ -136,7 +136,7 @@ namespace YoklamaSistemi.Class_Metod
         }
 
         //yönetici parolasını güncelleme
-        public void yoneticiParolaGuncelleme(string parola,int id)
+        public void yoneticiParolaGuncelleme(string parola, int id)
         {
             var Sifre = ctx.tblAdmins.First(x => x.id == id);
             Sifre.password = parola;
