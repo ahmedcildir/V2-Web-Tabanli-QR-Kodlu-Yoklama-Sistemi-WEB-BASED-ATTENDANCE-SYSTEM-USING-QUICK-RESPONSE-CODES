@@ -35,7 +35,7 @@ namespace YoklamaSistemi.form
             else
             {
                 lblmesaj.ForeColor = Color.Red;
-                lblmesaj.Text = txtTc.Text + " T.C Nolu Kullanıcı Zaten Kayıtlın ";
+                lblmesaj.Text = txtTc.Text + " T.C Nolu Kullanıcı Zaten Kayıtlı ";
             }
         }
     }

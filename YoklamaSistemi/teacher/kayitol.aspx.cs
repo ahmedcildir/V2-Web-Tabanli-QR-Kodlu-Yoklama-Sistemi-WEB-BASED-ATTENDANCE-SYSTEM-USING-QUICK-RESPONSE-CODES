@@ -54,7 +54,7 @@ namespace YoklamaSistemi.teacher
             }
             else//tc
             {
-                Response.Write("<script> alert('" + txttc.Text + " T.C Nolu Kullanıcı Zaten Kayıtlın'); </script>");
+                Response.Write("<script> alert('" + txttc.Text + " T.C Nolu Kullanıcı Zaten Kayıtlı'); </script>");
 
             }
         }
